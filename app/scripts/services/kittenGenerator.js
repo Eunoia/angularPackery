@@ -10,9 +10,9 @@ angular.module('angularPackeryApp')
 					var cat = document.createElement("img");
 					var base = 100;
 					var rand_x, rand_y;
-					rand_x = (Math.round(Math.random()*6)+0)*base;
-					rand_y = (Math.round(Math.random()*6)+0)*base;
-					cat.src = "http://placekitten.com/"+rand_x+"/"+rand_y;
+					rand_x = (Math.round(Math.random()*6)+1)*base;
+					rand_y = (Math.round(Math.random()*6)+1)*base;
+					cat.src = "http://fillmurray.com/g/"+rand_x+"/"+rand_y;
 					item.appendChild(cat);
 					return item;
 				}
