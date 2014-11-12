@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularPackeryApp')
-	.service('Kittengenerator', function Kittengenerator($timeout,$http) {
+	.service('Kittengenerator', function Kittengenerator($timeout,$http,$q) {
 		return {
 			generate: function(element){
 				function randomCat(){
@@ -16,19 +16,21 @@ angular.module('angularPackeryApp')
 					item.appendChild(cat);
 					return item;
 				}
+				var deferred = $q.defer()
 				var maxKittens = 50;
 				$http.defaults.useXDomain = true;
 				$http.defaults.headers.common['Authorization'] = 'Client-ID b2da2866dcbfa39';
 				for(var i =0; i< maxKittens; i++){
 					var kitteh = randomCat();
-					element.append(kitteh); 
+					element.append(kitteh);
 				}
 				$timeout(function(){
 					imagesLoaded(document.querySelector('.kittens'),function(){
 						var pcrky = new Packery(element[0],{itemSelector:".item",gutter: 0, columnWidth: 50});
-						return typeof pckry;
+						deferred.resolve()
 					})
 				},2);
+				return deferred.promise
 			}
 		}
 	});
