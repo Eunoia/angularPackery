@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPackeryApp', ['infinite-scroll'])
+angular.module('angularPackeryApp', ['infinite-scroll','ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
