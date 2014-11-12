@@ -20,19 +20,6 @@ angular.module('angularPackeryApp')
 				var maxKittens = 50;
 				$http.defaults.useXDomain = true;
 				$http.defaults.headers.common['Authorization'] = 'Client-ID b2da2866dcbfa39';
-				// $http.defaults.headers.common['X-Testing'] = "portland rain";
-				// var headers = {
-				// 	headers:{
-				// 		'Authorization':'Client-ID b2da2866dcbfa39'
-				// 		// "X-Testing","portland"
-				// 	}
-				// }
-				$http.get('https://api.imgur.com/3/gallery/hot/viral/0.json')
-				.success(function(data){
-					console.log(data);
-				}).error(function(a,b,c,d,e){
-					console.log("ERROR",a,b,c,d);
-				});
 				for(var i =0; i< maxKittens; i++){
 					var kitteh = randomCat();
 					element.append(kitteh); 
