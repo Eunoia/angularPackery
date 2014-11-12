@@ -2,7 +2,6 @@
 
 angular.module('angularPackeryApp')
 	.service('Kittengenerator', function Kittengenerator($timeout,$http) {
-		// AngularJS will instantiate a singleton by calling "new" on this function
 		return {
 			generate: function(element){
 				function randomCat(){
@@ -23,8 +22,6 @@ angular.module('angularPackeryApp')
 				for(var i =0; i< maxKittens; i++){
 					var kitteh = randomCat();
 					element.append(kitteh); 
-					// element.attr("infinite-scroll","myPagingFunction()")
-					// element.attr("infinite-scroll-distance","3");
 				}
 				$timeout(function(){
 					imagesLoaded(document.querySelector('.kittens'),function(){
